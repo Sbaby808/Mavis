@@ -6,4 +6,11 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://129.211.61.159:3306/chattingRoom?useUnicode=true&characterEncoding=utf-8&relaxAutoCommit=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
     username: mavisdev
-    password: DiDi80007
+    password: cF3NdwcO5TXjwHg3y8IvNf8vwZvRDZlSzoCwUkwfgmt0WrMnMYI22EYlffAPp/sdLYFYkHncW2hsq3c3HCrN1Q==
+    druid:
+      connection-properties: config.decrypt=true;config.decrypt.key=${public-key}
+      filter:
+        config:
+          enabled: true
+
+public-key: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAOF8fjFdf22zKwIrG1n6SJnT2rSRHCmSYF5OLpvYg6jMMqcM0CRbN1B1BVpy4YSAD5aGGttyFIKadHy4e+LheysCAwEAAQ==

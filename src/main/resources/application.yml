@@ -3,7 +3,7 @@ server:
 
 spring:
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://129.211.61.159:3306/chattingRoom?useUnicode=true&characterEncoding=utf-8&relaxAutoCommit=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
     username: mavisdev
     password: cF3NdwcO5TXjwHg3y8IvNf8vwZvRDZlSzoCwUkwfgmt0WrMnMYI22EYlffAPp/sdLYFYkHncW2hsq3c3HCrN1Q==
@@ -12,5 +12,27 @@ spring:
       filter:
         config:
           enabled: true
+        stat:
+          log-slow-sql: true
+          slow-sql-millis: 2000
+      web-stat-filter:
+        enabled: true
+        url-pattern: "/*"
+        exclusions: "*.gif,*.png,*.jpg,*.html,*.js,*.css,*.ico,/druid/*"
+      stat-view-servlet:
+        enabled: true
+        url-pattern: "/druid/*"
+        reset-enable: true
+        login-username: admin
+        login-password: admin
+        allow:
+        deny:
+      # Druid其他配置
+      initial-size: 5
+      max-active: 20
+      min-idle: 10
+      max-wait: 10
+      filters: stat,wall
+
 
 public-key: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAOF8fjFdf22zKwIrG1n6SJnT2rSRHCmSYF5OLpvYg6jMMqcM0CRbN1B1BVpy4YSAD5aGGttyFIKadHy4e+LheysCAwEAAQ==

@@ -1,4 +1,4 @@
-package com.mavis.chattingroom.conrtoller;
+package com.mavis.chattingroom.controller;
 
 import com.mavis.chattingroom.pojo.ResponseEntity;
 import com.mavis.chattingroom.service.DemoService;

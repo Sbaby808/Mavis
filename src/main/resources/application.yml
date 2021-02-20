@@ -34,5 +34,6 @@ spring:
       max-wait: 10
       filters: stat,wall
 
-
 public-key: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAOF8fjFdf22zKwIrG1n6SJnT2rSRHCmSYF5OLpvYg6jMMqcM0CRbN1B1BVpy4YSAD5aGGttyFIKadHy4e+LheysCAwEAAQ==
+mybatis:
+  mapper-locations: classpath:com/mavis/chattingroom/dao/*.xml

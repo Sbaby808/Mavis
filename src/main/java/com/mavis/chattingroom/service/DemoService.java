@@ -13,12 +13,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class DemoService {
 
-    Logger logger= LoggerFactory.getLogger(DemoService.class);
+    Logger logger = LoggerFactory.getLogger(DemoService.class);
 
     @Autowired
     DemoDao demoDao;
 
-    public String getDatabaseName(){
+    public String getDatabaseName() {
         return demoDao.getDataBaseName();
     }
 }

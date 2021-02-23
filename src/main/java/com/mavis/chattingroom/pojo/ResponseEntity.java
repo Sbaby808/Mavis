@@ -1,5 +1,7 @@
 package com.mavis.chattingroom.pojo;
 
+import com.mavis.chattingroom.util.MessageConstant;
+
 /**
  * @Author： xinjingjie
  * @Date：2021/1/26 15:28
@@ -10,6 +12,14 @@ public class ResponseEntity {
     private Object data;
 
     public ResponseEntity() {
+    }
+
+    public static ResponseEntity success() {
+        return new ResponseEntity(0, MessageConstant.SUCCESS, 0);
+    }
+
+    public static ResponseEntity failure() {
+        return new ResponseEntity(-1, MessageConstant.FAILURE, -1);
     }
 
     public ResponseEntity(int code, String message, Object data) {
@@ -38,7 +48,8 @@ public class ResponseEntity {
         return data;
     }
 
-    public void setData(Object data) {
+    public ResponseEntity setData(Object data) {
         this.data = data;
+        return this;
     }
 }

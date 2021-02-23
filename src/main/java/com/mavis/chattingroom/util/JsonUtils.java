@@ -18,7 +18,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class JsonUtils {
     private static final ObjectMapper mapper = new ObjectMapper();
-    private static final Logger log= LoggerFactory.getLogger(JsonUtils.class);
+    private static final Logger log = LoggerFactory.getLogger(JsonUtils.class);
+
     static {
         // 对于空的对象转json的时候不抛出错误
         mapper.disable(SerializationFeature.FAIL_ON_EMPTY_BEANS);

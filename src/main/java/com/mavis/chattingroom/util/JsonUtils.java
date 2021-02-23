@@ -9,11 +9,13 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.lang.NonNull;
+import org.springframework.stereotype.Component;
 
 /**
  * @Author： xinjingjie
  * @Date：2021/2/20 16:49
  **/
+@Component
 public class JsonUtils {
     private static final ObjectMapper mapper = new ObjectMapper();
     private static final Logger log= LoggerFactory.getLogger(JsonUtils.class);

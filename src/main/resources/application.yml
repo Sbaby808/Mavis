@@ -1,5 +1,8 @@
 server:
   port: 8088
+  servlet:
+    encoding:
+      charset: UTF-8
 
 spring:
   datasource:
@@ -33,7 +36,29 @@ spring:
       min-idle: 10
       max-wait: 10
       filters: stat,wall
+  web:
+    resources:
+      static-locations: classpath:/static/
+  mvc:
+    view:
+      suffix: .html
 
 public-key: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAOF8fjFdf22zKwIrG1n6SJnT2rSRHCmSYF5OLpvYg6jMMqcM0CRbN1B1BVpy4YSAD5aGGttyFIKadHy4e+LheysCAwEAAQ==
 mybatis:
   mapper-locations: classpath:com/mavis/chattingroom/dao/*.xml
+
+logging:
+  config: classpath:log4j2.xml
+  level:
+    root: INFO
+    javax.activation: info
+    org.apache.catalina: INFO
+    org.apache.commons.beanutils.converters: INFO
+    org.apache.coyote.http11.Http11Processor: INFO
+    org.apache.http: INFO
+    org.apache.tomcat: INFO
+    org.springframework: INFO
+    com.chinamobile.cmss.bdpaas.resource.monitor: DEBUG
+  file:
+    path: \log
+

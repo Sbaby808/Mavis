@@ -1,7 +1,24 @@
+logging:
+  level:
+    root: info
+
 server:
   port: 8088
 
 spring:
+  redis:
+    host: 129.211.61.159
+    port: 6379
+    password: 1586321
+    timeout: 5000
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 500
+        min-idle: 0
+      lettuce:
+        shutdown-timeout: 0
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://129.211.61.159:3306/chattingRoom?useUnicode=true&characterEncoding=utf-8&relaxAutoCommit=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
@@ -36,3 +53,6 @@ spring:
 
 
 public-key: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAOF8fjFdf22zKwIrG1n6SJnT2rSRHCmSYF5OLpvYg6jMMqcM0CRbN1B1BVpy4YSAD5aGGttyFIKadHy4e+LheysCAwEAAQ==
+
+
+

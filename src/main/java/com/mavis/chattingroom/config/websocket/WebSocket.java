@@ -1,4 +1,4 @@
-package com.mavis.chattingroom.config;
+package com.mavis.chattingroom.config.websocket;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -41,7 +41,7 @@ public class WebSocket {
         logger.info("[WebSocket] 收到消息：={}", message);
         if(message.indexOf("TOUSER") == 0) {
             String name = message.substring(message.indexOf("TOUSER") + 6, message.indexOf(";"));
-            appointSending(name, message.substring(message.indexOf(";") + 1, message.length()));
+            appointSending(name, message.substring(message.indexOf(";") + 1));
         } else {
             message = this.name + ":" + message;
             groupSending(message);
